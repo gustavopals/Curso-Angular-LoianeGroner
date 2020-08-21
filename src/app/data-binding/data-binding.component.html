@@ -1,4 +1,5 @@
 <article class="borda">
+    <!--estrutura da tela, todos os exercicios passados em aula-->
     <h3>Ciclo de vida do componente</h3>
     <app-ciclo [valorInicial]='valor' *ngIf="!deletarCiclo"></app-ciclo>
     <button class="btn btn-primary" (click)="mudarValor()">Mudar Valor</button>
@@ -8,6 +9,7 @@
 <br>
 
 <article class="borda">
+    <!--aula 13 a 16-->
     <h3>Input/Output Properties</h3>
     <app-curso [nome]="nomeDoCurso"></app-curso>
     <contador></contador>
@@ -16,6 +18,7 @@
 asd
 
 <article class="borda">
+    <!--aula 9-->
     <h3>Interpolação</h3>
     <p>String renderizada com interpolação: {{ url }}</p>
     <p>Resultado de 1 + 1 é: {{ 1+1}}</p>
@@ -34,6 +37,7 @@ asd
 <br>
 
 <article class="borda">
+    <!--aula 10-->
     <h3>Class e Style Binding</h3>
     <div>
         Selecione uma classe:
@@ -65,6 +69,7 @@ asd
 <br>
 
 <article class="borda">
+    <!--aula 11-->
     <h3>Event Binding</h3>
     <div>
         <button (click)="botaoClicado()" class="btn btn-primary">Me clique!</button>
@@ -85,6 +90,7 @@ asd
 <br>
 
 <article class="borda">
+    <!--aula 12-->
     <h3>Two-way data binding</h3>
     Nome:
     <input class="form-control" type="text" [(ngModel)]="pessoa.nome">
