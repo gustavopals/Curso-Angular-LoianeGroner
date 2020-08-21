@@ -1,0 +1,126 @@
+<article class="borda">
+    <h3>Ciclo de vida do componente</h3>
+    <app-ciclo [valorInicial]='valor' *ngIf="!deletarCiclo"></app-ciclo>
+    <button class="btn btn-primary" (click)="mudarValor()">Mudar Valor</button>
+    <button class="btn btn-danger" (click)="destruirCiclo()">Deletar Valor</button>
+
+</article>
+<br>
+
+<article class="borda">
+    <h3>Input/Output Properties</h3>
+    <app-curso [nome]="nomeDoCurso"></app-curso>
+    <contador></contador>
+</article>
+<br>
+asd
+
+<article class="borda">
+    <h3>Interpolação</h3>
+    <p>String renderizada com interpolação: {{ url }}</p>
+    <p>Resultado de 1 + 1 é: {{ 1+1}}</p>
+    <p>Resultado de 1 + 1 não é: {{ 1+1 + getValor()}}</p>
+    <p>Curso angular : {{cursoAngular && getCurtirCurso()}}</p>
+</article>
+<br>
+
+<article class="borda">
+    <h3>Data Binding com URL</h3>
+    <p>Imagem Interpolação:</p>:
+    <img src="{{urlImagem}}" alt="texto"><br><br>
+    <p>Imagem Data Binding:</p>
+    <img [src]="urlImagem" alt="texto">
+</article>
+<br>
+
+<article class="borda">
+    <h3>Class e Style Binding</h3>
+    <div>
+        Selecione uma classe:
+        <select class="form-control form-control-sm" #classe (change)="0">
+            <option value="alert-success">Sucesso</option>
+            <option value="alert-danger">Erro</option>
+        </select>
+
+        <div class="alert alert-danger" role="danger"
+            [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+            Erro apareceu
+            <!--só aparece se for do tipo danger-->
+        </div>
+
+        <div class="alert {{classe.value}}" role="alert">
+            Texto colorido
+            <!-- muda de acordo com o select -->
+        </div>
+
+        <div class="alert" role="alert" [class.alert-success]="classe.value ==   'alert-success'">
+            <!--seleciona somente a div do select-->
+            A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+        <div class="alert" role="alert" [class.alert-danger]="classe.value ==   'alert-danger'">
+            A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+    </div>
+</article>
+<br>
+
+<article class="borda">
+    <h3>Event Binding</h3>
+    <div>
+        <button (click)="botaoClicado()" class="btn btn-primary">Me clique!</button>
+        <br><br>
+        <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor($event.target.value)"
+            (blur)="salvarValor($event.target.value)" />
+        <p>Valor Atual: {{valorAtual}}</p>
+        <!--Imprime o valor atual do input trazendo o dado por interpolação-->
+        <p>Valor salvo: {{valorSalvo}}</p>
+        <!--Imprime o valor atual do input trazendo o dado por interpolação-->
+        <br>
+        <!--le o evento do mouse passando por cima-->
+        <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">
+            Passe o mouse sobre mim
+        </span>
+    </div>
+</article>
+<br>
+
+<article class="borda">
+    <h3>Two-way data binding</h3>
+    Nome:
+    <input class="form-control" type="text" [(ngModel)]="pessoa.nome">
+    Idade:
+    <input class="form-control" type="text" [(ngModel)]="pessoa.idade">
+    DDD:
+    <input class="form-control" type="text" [(ngModel)]="pessoa.telefone.DDD">
+    Telefone:
+    <input class="form-control" type="text" [(ngModel)]="pessoa.telefone.numero">
+    Resultado:
+    <label class="form-group">Meu nome é {{pessoa.nome}} e tenho {{pessoa.idade}} anos de vida</label>
+    <p>Meu telefone é DDD: {{pessoa.telefone.DDD}} numero: {{pessoa.telefone.numero}}</p>
+    <p>Exemplo ngModel:</p>
+    Digite:
+    <input type="text" [value]="nome" (input)="nome = $event.target.value" />
+    Data Binding:
+    <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
+    <p>Data Binding: {{nome}}</p>
+</article>
+<br>
+
+<article class="borda">
+    <h3>Soma com Event Binding</h3>
+    <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor($event.target.value)"
+        (blur)="salvarValor($event.target.value)" />+
+    <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor2($event.target.value)"
+        (blur)="salvarValor2($event.target.value)" />=
+    {{soma()}}
+</article>
+<br>
+
+<article class="borda">
+    <h3>Soma com binding</h3>
+    <input type="text" [(ngModel)]="num1">+
+    <input type="text" [(ngModel)]="num2">=
+    <input type="text" [value]="resultadoFinal" readonly>
+    <button class="btn btn-primary" (click)="somaFinal()">Soma</button>
+</article>
+<br>
