@@ -9,6 +9,7 @@ import { OutputPropertyComponent } from './output-property/output-property.compo
 import { CicloComponent } from './ciclo/ciclo.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ExemloNgContentComponent } from './exemlo-ng-content/exemlo-ng-content.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
         OutputPropertyComponent,
         CicloComponent,
         CursosComponent,
+        ExemloNgContentComponent,
 
 
     ],
