@@ -1,3 +1,4 @@
+import { DataBindingComponent } from './data-binding/data-binding.component';
 import { CursosListaComponent } from './cursos/cursos-lista/cursos-lista.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -8,6 +9,7 @@ const routes: Routes = [ //faz as rotas
     { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: 'cursos', component: CursosComponent },
     { path: 'cursos/:id', component: CursosListaComponent },
+    { path: 'data-binding', component: DataBindingComponent },
 ]
 @NgModule({
     declarations: [],

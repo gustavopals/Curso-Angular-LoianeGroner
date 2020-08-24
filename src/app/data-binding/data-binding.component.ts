@@ -21,6 +21,7 @@ export class DataBindingComponent implements OnInit {
     num2: string = '0';
     valor: number = 5;
     deletarCiclo: boolean = false;
+    testeIf = false;
     pessoa: any = {
         nome: 'Gustavo',
         idade: 24,
@@ -30,6 +31,9 @@ export class DataBindingComponent implements OnInit {
         }
     }
 
+    onTesteIf() { //altera o valor de testeIf
+        this.testeIf = !this.testeIf;
+    }
     destruirCiclo() {
         this.deletarCiclo = true;
     }

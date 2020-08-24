@@ -1,4 +1,23 @@
 <article class="borda">
+    <!--Aula 25 ngif-->
+    <h3>Diretiva *ngIf</h3>
+    <div *ngIf="testeIf;else emptyCourses">
+        <!--teste de testeIf esta positivo ou nao-->
+        <p>A variavel testeIf está true</p>
+    </div>
+    <div *ngIf=" !testeIf">
+        <p>A variavel testeIf está false</p>
+    </div>
+    <button class="btn btn-primary" (click)="onTesteIf()">Alterar</button>
+    <!--Chama a funcao que troca o valor de testeIf-->
+    <ng-template #emptyCourses>
+        <!--else da função if-->
+        testeIf está false.
+    </ng-template>
+</article>
+<br>
+
+<article class="borda">
     <!--estrutura da tela, todos os exercicios passados em aula-->
     <h3>Ciclo de vida do componente</h3>
     <app-ciclo [valorInicial]='valor' *ngIf="!deletarCiclo"></app-ciclo>
