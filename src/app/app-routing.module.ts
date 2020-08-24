@@ -1,3 +1,4 @@
+import { CalculaCustoViagemComponent } from './calcula-custo-viagem/calcula-custo-viagem.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { CursosListaComponent } from './cursos/cursos-lista/cursos-lista.component';
 import { CursosComponent } from './cursos/cursos.component';
@@ -10,6 +11,7 @@ const routes: Routes = [ //faz as rotas
     { path: 'cursos', component: CursosComponent },
     { path: 'cursos/:id', component: CursosListaComponent },
     { path: 'data-binding', component: DataBindingComponent },
+    { path: 'calcula-custo-viagem', component: CalculaCustoViagemComponent },
 ]
 @NgModule({
     declarations: [],

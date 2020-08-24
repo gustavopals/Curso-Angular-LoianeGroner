@@ -1,0 +1,58 @@
+<article class="borda">
+    <h3>Calculo de custo de viagem</h3>
+    <h5>Informe o dados abaixo para descobrir o custo total de sua viagem.</h5>
+
+
+    <form>
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">Informe seu Nome:</label>
+            <input type="text" class="form-control" placeholder="ex: Fulano da Silva" [(ngModel)]="nome" name="nome">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Informe sua origem:</label>
+            <select class="form-control" [(ngModel)]="origem" name="origem">
+                <option *ngFor="let mun of municipio">{{mun}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Informe seu destino:</label>
+            <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="destino" name="destino">
+                <option *ngFor="let mun2 of municipio">{{mun2}}</option>
+            </select>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" [(ngModel)]="ida">
+            <label class="form-check-label" for="exampleRadios1">
+                Ida e Volta?
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Informe a distancia a ser percorrida:</label>
+            <input type="text" class="form-control" placeholder="ex: 80 Km" [(ngModel)]="distancia" name="distancia">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Informe o KM/L:</label>
+            <input type="text" class="form-control" placeholder="ex: 15 KM/L" [(ngModel)]="kmL" name="kmL">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Informe o preço atual do combustivel:</label>
+            <input type="text" class="form-control" placeholder="ex: R$ 4,29" [(ngModel)]="precoCombustivel"
+                name="precoCombustivel">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Informe o valor total do pedágio:</label>
+            <input type="text" class="form-control" placeholder="R$ 7,40" [(ngModel)]="pedagio" name="pedagio">
+        </div>
+        <button class="bnt btn-primary" (click)="calculoFinal()">Calcular</button>
+        <button class="bnt btn-danger">Cancelar</button>
+        <br><br>
+        <div *ngIf="clicou">
+            <h5>Ola {{nome}},</h5>
+            <h6>Sua viagem de {{origem}} a {{destino}} irá ter um custo de: R$ {{resultado}}</h6>
+            <h6>Kilometragem total percorrida: {{distancia}} Km e {{consumido}} litros de combustivel consumido</h6>
+        </div>
+    </form>
+
+</article>

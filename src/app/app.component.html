@@ -21,6 +21,10 @@
                     [class.active]="aba == 'data'" (click)="aba = 'data'">Data
                     Binding</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/calcula-custo-viagem']" routerLinkActive="router-link-active"
+                    [class.active]="aba == 'viagem'" (click)="aba = 'viagem'">Custo Viagem</a>
+            </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -41,6 +45,9 @@
         </div>
         <div *ngSwitchCase="'data'">
             <h3>Aba Data-Binding</h3>
+        </div>
+        <div *ngSwitchCase="'viagem'">
+            <h3>Aba Custo da Viagem</h3>
         </div>
         <div *ngSwitchDefault>
             <h3>Aba Home</h3>

@@ -10,6 +10,7 @@ import { CicloComponent } from './ciclo/ciclo.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ExemloNgContentComponent } from './exemlo-ng-content/exemlo-ng-content.component';
+import { CalculaCustoViagemComponent } from './calcula-custo-viagem/calcula-custo-viagem.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ExemloNgContentComponent } from './exemlo-ng-content/exemlo-ng-content.
         CicloComponent,
         CursosComponent,
         ExemloNgContentComponent,
+        CalculaCustoViagemComponent,
 
 
     ],
