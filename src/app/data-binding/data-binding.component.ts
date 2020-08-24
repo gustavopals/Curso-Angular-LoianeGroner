@@ -23,6 +23,11 @@ export class DataBindingComponent implements OnInit {
     deletarCiclo: boolean = false;
     testeIf = false;
     cursosCadastrados: string[] = ["Java", "Angular", "PHP", "Android"];
+    meuFavorito: boolean = false;
+
+    ativo: boolean = false;
+    tamanhoFonte: number = 10;
+
     pessoa: any = {
         nome: 'Gustavo',
         idade: 24,
@@ -30,6 +35,14 @@ export class DataBindingComponent implements OnInit {
             DDD: 42,
             numero: 999365350
         }
+    }
+
+    mudarAtivo() {
+        this.ativo = !this.ativo;
+    }
+
+    onClick() {
+        this.meuFavorito = !this.meuFavorito;
     }
 
     onTesteIf() { //altera o valor de testeIf
