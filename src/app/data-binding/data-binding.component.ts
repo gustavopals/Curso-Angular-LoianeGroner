@@ -22,6 +22,7 @@ export class DataBindingComponent implements OnInit {
     valor: number = 5;
     deletarCiclo: boolean = false;
     testeIf = false;
+    cursosCadastrados: string[] = ["Java", "Angular", "PHP", "Android"];
     pessoa: any = {
         nome: 'Gustavo',
         idade: 24,

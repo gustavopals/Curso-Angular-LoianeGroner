@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Curso Angular</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -7,15 +7,18 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active">Home <span
-                        class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active"
+                    [class.active]="aba == 'home'" (click)="aba = 'home'">Home</a>
+                <!--trata a variavel aba para configurar o menu-->
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/cursos']" routerLinkActive="router-link-active">Cursos</a>
+                <a class="nav-link" [routerLink]="['/cursos']" routerLinkActive="router-link-active"
+                    [class.active]="aba == 'cursos'" (click)="aba = 'cursos'">Cursos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/data-binding']" routerLinkActive="router-link-active">Data
+                <a class="nav-link" [routerLink]="['/data-binding']" routerLinkActive="router-link-active"
+                    [class.active]="aba == 'data'" (click)="aba = 'data'">Data
                     Binding</a>
             </li>
         </ul>
@@ -29,7 +32,22 @@
 <div class="ex1">
     <h1 class="centro">Curso Angular - Loiane Groner</h1>
     <h5 class="centro">Gustavo Pals - 21/08/2020</h5>
+
+
+    <div [ngSwitch]="aba">
+        <!-- faz o switch entre as divs-->
+        <div *ngSwitchCase="'cursos'">
+            <h3>Aba Cursos</h3>
+        </div>
+        <div *ngSwitchCase="'data'">
+            <h3>Aba Data-Binding</h3>
+        </div>
+        <div *ngSwitchDefault>
+            <h3>Aba Home</h3>
+        </div>
+    </div>
     <router-outlet></router-outlet>
+
     <!--sistema de rotas-->
     <!--app-data-binding></app-data-binding-->
     <!--Chama o componente data-binding-->
