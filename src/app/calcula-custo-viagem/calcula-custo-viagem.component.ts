@@ -19,8 +19,6 @@ export class CalculaCustoViagemComponent implements OnInit {
     resultado;
     clicou: boolean = false;
     consumido;
-    distancia2;
-    pedagio2;
 
     constructor() { }
 
