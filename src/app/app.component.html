@@ -30,8 +30,16 @@
                     [class.active]="aba == 'clientes'" (click)="aba = 'clientes'">Cadastro Clientes</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/cadastro-produto']" routerLinkActive="router-link-active"
+                    [class.active]="aba == 'produto'" (click)="aba = 'produto'">Cadastro Produtos</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/carros']" routerLinkActive="router-link-active"
                     [class.active]="aba == 'carros'" (click)="aba = 'carros'">Cadastro Carros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/vendas']" routerLinkActive="router-link-active"
+                    [class.active]="aba == 'vendas'" (click)="aba = 'vendas'">Vendas</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

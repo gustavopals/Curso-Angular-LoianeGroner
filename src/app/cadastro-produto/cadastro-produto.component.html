@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Produtos</h2>
+    <h4> {{produtosCadastrados}} produtos cadastrados</h4>
+
+
+    <div class="card list-car">
+        <h3 class="card-header">Lista de Produtos Cadastrados</h3>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome do Produto</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let produto of produtos">
+                        <td>{{produto.id}}</td>
+                        <td>{{produto.ProdutoNome}}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm" (click)="editProduto(produto)">Editar</button>
+                            <button class="btn btn-danger btn-sm ml-1" (click)="deleteProduto(produto)">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class=" card add-car">
+        <h3 class="card-header">Adicionar/Atualizar Produto</h3>
+        <div class="card-body">
+            <form id="add-form" (ngSubmit)="f.form.valid && saveProduto(f)" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="produto">Produto</label>
+                    <input type="text" [(ngModel)]="produto.ProdutoNome" id="produto" name="produto" #model="ngModel"
+                        required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }"
+                        placeholder="Digite o nome do produto">
+                    <div *ngIf="f.submitted && model.invalid" class="invalid-feedback">
+                        <div *ngIf="produto.errors.required">Nome é obrigatório</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-add-car">Salvar</button>
+                <button type="reset" class="btn btn-secondary btn-add-car">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>

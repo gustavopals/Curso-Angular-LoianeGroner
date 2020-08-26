@@ -1,5 +1,7 @@
 import { ClientesService } from './../services/clientes.service';
 import { Clientes } from './../models/clientes';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -28,11 +30,13 @@ export class CadastroClientesComponent implements OnInit {
 
 
 
-    cliente = {} as Clientes
+    cliente = {} as Clientes;
     clientes: Clientes[];
+    clientesCadastrados: number = 0;
 
     ngOnInit(): void {
         this.getClientes();
+
 
     }
 
@@ -40,6 +44,7 @@ export class CadastroClientesComponent implements OnInit {
     getClientes() {
         this.clientesService.getClientes().subscribe((clientes: Clientes[]) => {
             this.clientes = clientes;
+            this.clientesCadastrados = this.clientes.length;
         });
 
     }

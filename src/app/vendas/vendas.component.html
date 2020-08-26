@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Vendas</h2>
+    <h4> {{vendasCadastrados}} Vendas cadastrados</h4>
+
+
+    <div class="card list-car">
+        <h3 class="card-header">Lista de Vendas Cadastrados</h3>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>IDProduto</th>
+                        <th>PrecoVenda</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let venda of vendas">
+                        <td>{{venda.id}}</td>
+                        <td>{{venda.IDProduto}}</td>
+                        <td>{{venda.VendaPreco}}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm" (click)="editVenda(venda)">Editar</button>
+                            <button class="btn btn-danger btn-sm ml-1" (click)="deleteVenda(venda)">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>

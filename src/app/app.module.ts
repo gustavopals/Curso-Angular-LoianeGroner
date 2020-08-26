@@ -59,6 +59,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
+import { VendasComponent } from './vendas/vendas.component';
+
 
 
 @NgModule({
@@ -73,6 +76,9 @@ import { OverlayModule } from '@angular/cdk/overlay';
         CalculaCustoViagemComponent,
         CadastroClientesComponent,
         CarrosComponent,
+        CadastroProdutoComponent,
+        VendasComponent,
+
 
 
     ],
@@ -82,7 +88,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
         AppRoutingModule, //roteamento
         HttpClientModule,
         BrowserAnimationsModule,
-        MatPaginatorModule
+
 
     ],
     providers: [],

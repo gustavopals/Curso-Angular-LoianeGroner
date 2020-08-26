@@ -1,3 +1,5 @@
+import { VendasComponent } from './vendas/vendas.component';
+import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { CadastroClientesComponent } from './cadastro-clientes/cadastro-clientes.component';
 import { CalculaCustoViagemComponent } from './calcula-custo-viagem/calcula-custo-viagem.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
@@ -16,6 +18,9 @@ const routes: Routes = [ //faz as rotas
     { path: 'calcula-custo-viagem', component: CalculaCustoViagemComponent },
     { path: 'cadastro-clientes', component: CadastroClientesComponent },
     { path: 'carros', component: CarrosComponent },
+    { path: 'cadastro-produto', component: CadastroProdutoComponent },
+    { path: 'vendas', component: VendasComponent },
+
 ]
 @NgModule({
     declarations: [],
