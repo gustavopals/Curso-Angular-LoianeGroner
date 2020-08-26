@@ -14,7 +14,7 @@ export class CadastroProdutoComponent implements OnInit {
     produtos: Produto[];
     produtosCadastrados: number = 0;
     numeros = [1, 2, 3, 4, 5, 6];
-    teste
+    teste;
 
 
 
@@ -23,13 +23,10 @@ export class CadastroProdutoComponent implements OnInit {
     ngOnInit(): void {
         this.getProdutos();
         this.countProduto();
-
     }
 
     countProduto() {
-        this.produtos.map(e => {
-            this.teste += e.ProdutoNome;
-        })
+
     }
 
 

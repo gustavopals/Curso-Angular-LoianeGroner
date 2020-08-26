@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Curso Angular</a>
+    <a class="navbar-brand" href="#">
+        <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top"
+            alt="" loading="lazy">Curso Angular</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -67,6 +69,15 @@
         </div>
         <div *ngSwitchDefault>
             <h3>Aba Home</h3>
+        </div>
+    </div>
+    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-header">Informações</div>
+        <div class="card-body">
+            <h5 class="card-title">Cadastros Realizados</h5>
+            <p class="card-text"> Clientes Cadastrados: </p>
+            <p class="card-text"> Carros Cadastrados: </p>
+            <p class="card-text"> Podutos Cadastrados: </p>
         </div>
     </div>
     <router-outlet></router-outlet>

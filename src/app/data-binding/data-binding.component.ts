@@ -1,3 +1,4 @@
+import { CursosService } from './../cursos/cursos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -24,6 +25,7 @@ export class DataBindingComponent implements OnInit {
     testeIf = false;
     cursosCadastrados: string[] = ["Java", "Angular", "PHP", "Android"];
     meuFavorito: boolean = false;
+    cursos: string[] = [];
 
     ativo: boolean = false;
     tamanhoFonte: number = 10;
@@ -90,9 +92,10 @@ export class DataBindingComponent implements OnInit {
         this.isMouseOver = !this.isMouseOver;
     }
 
-    constructor() { }
+    constructor(private cursosService: CursosService) { }
 
     ngOnInit(): void {
+        this.cursos = this.cursosService.getCursos();
     }
 
     soma() {

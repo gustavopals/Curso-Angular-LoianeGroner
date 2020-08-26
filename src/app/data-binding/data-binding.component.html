@@ -1,4 +1,13 @@
 <article class="borda">
+    <h3>Compartilhando Service de Cursos</h3>
+    <!--está trazendo as informações lá do CursoService-->
+    <ul>
+        <li *ngFor="let curso of cursos">{{curso}}</li>
+    </ul>
+</article>
+<br>
+
+<article class="borda">
     <app-exemlo-ng-content>
         Passando Conteudo do exemplo-ng-content para data-binding
     </app-exemlo-ng-content>

@@ -1,3 +1,4 @@
+import { CursosService } from './cursos/cursos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -7,7 +8,6 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { InputPropertyComponent } from './input-property/input-property.component';
 import { OutputPropertyComponent } from './output-property/output-property.component';
 import { CicloComponent } from './ciclo/ciclo.component';
-import { CursosComponent } from './cursos/cursos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ExemloNgContentComponent } from './exemlo-ng-content/exemlo-ng-content.component';
 import { CalculaCustoViagemComponent } from './calcula-custo-viagem/calcula-custo-viagem.component';
@@ -61,6 +61,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { VendasComponent } from './vendas/vendas.component';
+import { CursosComponent } from './cursos/cursos.component';
 
 
 
@@ -71,13 +72,13 @@ import { VendasComponent } from './vendas/vendas.component';
         InputPropertyComponent,
         OutputPropertyComponent,
         CicloComponent,
-        CursosComponent,
         ExemloNgContentComponent,
         CalculaCustoViagemComponent,
         CadastroClientesComponent,
         CarrosComponent,
         CadastroProdutoComponent,
         VendasComponent,
+        CursosComponent,
 
 
 
@@ -91,7 +92,7 @@ import { VendasComponent } from './vendas/vendas.component';
 
 
     ],
-    providers: [],
+    providers: [CursosService],
     bootstrap: [AppComponent],
     exports: [
         A11yModule,

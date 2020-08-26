@@ -11,6 +11,7 @@ export class ProdutoService {
 
     url = 'http://localhost:3000/Produto'; // api rest fake
 
+
     // injetando o HttpClient
     constructor(private httpClient: HttpClient) { }
 
@@ -18,6 +19,7 @@ export class ProdutoService {
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }
+
 
     // Obtem todos os carros
     getProdutos(): Observable<Produto[]> {
