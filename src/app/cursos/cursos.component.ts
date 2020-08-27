@@ -10,9 +10,11 @@ export class CursosComponent implements OnInit {
 
     constructor(private cursosService: CursosService) { }
     cursos: string[] = [];
+    numCurso;
 
     ngOnInit(): void {
         this.cursos = this.cursosService.getCursos();
+        this.numCurso = this.cursosService.numeroCursos();
     }
 
 }

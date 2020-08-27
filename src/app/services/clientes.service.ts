@@ -10,6 +10,7 @@ import { retry, catchError } from 'rxjs/operators';
 export class ClientesService {
 
     url = 'http://localhost:3000/cliente'; // api rest fake
+    teste;
 
     constructor(private httpClient: HttpClient) { }
 
@@ -25,6 +26,7 @@ export class ClientesService {
                 retry(2),
                 catchError(this.handleError))
     }
+
 
 
     // Manipulação de erros

@@ -1,0 +1,10 @@
+<div class="borda">
+    <h3>Exemplo de Pipes do Angular</h3>
+
+    <p>Titulo do Livro: {{ livro.titulo | uppercase }} uppercase</p>
+    <p>Estrelas do Livro: {{ livro.rating | number }} number</p>
+    <p>Paginas do Livro: {{ livro.numeroPaginas | number}}</p>
+    <p>Preco do Livro: {{ livro.preco | currency: 'R$ '}}</p>
+    <p>Data de Lançamento do Livro: {{ livro.dataLancamento | date}}</p>
+    <a href="{{livro.url}}">Url do Livro: {{livro.url}}</a>
+</div>

@@ -1,3 +1,4 @@
+import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { VendasComponent } from './vendas/vendas.component';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { CadastroClientesComponent } from './cadastro-clientes/cadastro-clientes.component';
@@ -19,6 +20,7 @@ const routes: Routes = [ //faz as rotas
     { path: 'carros', component: CarrosComponent },
     { path: 'cadastro-produto', component: CadastroProdutoComponent },
     { path: 'vendas', component: VendasComponent },
+    { path: 'exemplos-pipes', component: ExemplosPipesComponent },
 
 ]
 @NgModule({

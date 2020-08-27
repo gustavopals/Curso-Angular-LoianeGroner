@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 /**
@@ -18,26 +18,13 @@ import { NgForm } from '@angular/forms';
 export class CadastroClientesComponent implements OnInit {
 
     constructor(private clientesService: ClientesService) { }
-
-
-
-
-
-
-
-
-
-
-
-
     cliente = {} as Clientes;
     clientes: Clientes[];
     clientesCadastrados: number = 0;
 
+
     ngOnInit(): void {
         this.getClientes();
-
-
     }
 
     // Chama o serviço para obtém todos os carros
@@ -45,6 +32,7 @@ export class CadastroClientesComponent implements OnInit {
         this.clientesService.getClientes().subscribe((clientes: Clientes[]) => {
             this.clientes = clientes;
             this.clientesCadastrados = this.clientes.length;
+
         });
 
     }

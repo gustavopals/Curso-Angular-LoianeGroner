@@ -62,6 +62,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { VendasComponent } from './vendas/vendas.component';
 import { CursosComponent } from './cursos/cursos.component';
+import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 
 
 
@@ -79,6 +80,7 @@ import { CursosComponent } from './cursos/cursos.component';
         CadastroProdutoComponent,
         VendasComponent,
         CursosComponent,
+        ExemplosPipesComponent,
 
 
 
