@@ -71,7 +71,7 @@ export class DataBindingComponent implements OnInit {
     }
 
     botaoClicado() {
-        alert('Botão clicado')
+        alert('Botão clicado');
     }
 
     onKeyUp(evento: KeyboardEvent) {

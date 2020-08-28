@@ -37,12 +37,8 @@
       "ProdutoNome": "Régua"
     },
     {
-      "ProdutoNome": "Pasta",
-      "id": 10
-    },
-    {
-      "ProdutoNome": "Tesoura",
-      "id": 11
+      "id": 10,
+      "ProdutoNome": "Pasta 2"
     }
   ],
   "Venda": [
@@ -283,12 +279,6 @@
       "color": "Prata",
       "price": 1243,
       "id": 6
-    },
-    {
-      "model": "Ford Mustang",
-      "color": "Azul",
-      "price": 1000,
-      "id": 7
     }
   ],
   "cliente": [

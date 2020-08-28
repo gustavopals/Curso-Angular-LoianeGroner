@@ -15,8 +15,8 @@ export class CalculaCustoViagemComponent implements OnInit {
     distancia: number;
     kmL: number;
     precoCombustivel: number;
-    pedagio;
-    resultado;
+    pedagio: number;
+    resultado: number;
     clicou: boolean = false;
     consumido;
 
@@ -26,15 +26,13 @@ export class CalculaCustoViagemComponent implements OnInit {
     }
 
     calculoFinal() {
-
         if (!this.ida) {
             this.resultado = this.distancia / this.kmL;
             this.consumido = this.distancia / this.kmL;
             this.resultado = this.resultado * this.precoCombustivel;
-            this.resultado = parseInt(this.resultado) + parseInt(this.pedagio);
+            this.resultado = this.resultado + this.pedagio;
             this.clicou = !this.clicou;
         }
-
         if (this.ida) {
             console.log("multiplicou")
             this.distancia = this.distancia * 2;
@@ -42,14 +40,9 @@ export class CalculaCustoViagemComponent implements OnInit {
             this.resultado = this.distancia / this.kmL;
             this.consumido = this.distancia / this.kmL;
             this.resultado = this.resultado * this.precoCombustivel;
-            this.resultado = parseInt(this.resultado) + parseInt(this.pedagio);
+            this.resultado = this.resultado + this.pedagio;
             this.clicou = !this.clicou;
         }
-
-
-
-
-
     }
 
 }

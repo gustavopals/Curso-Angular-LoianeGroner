@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class CursosService {
-    curso: string[] = ['Angular', 'PHP', 'Java', 'Delhpi'];
+    curso: string[] = ['Angular', 'PHP', 'Java', 'Delhpi', 'Android'];
     passaCurso: number = 0;
 
     getCursos(): string[] {
@@ -17,6 +17,5 @@ export class CursosService {
     }
 
     constructor() { }
-
 
 }

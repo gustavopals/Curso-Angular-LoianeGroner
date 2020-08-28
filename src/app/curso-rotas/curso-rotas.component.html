@@ -1,0 +1,28 @@
+<p>curso-rotas works!</p>
+<div class="container">
+    <div class="borda">
+        <h2>Exemplo Rotas passando valores</h2>
+        <label>Entre com o id do curso:</label>
+        <input class="form-control" #idCurso (keyup)="0"><br>
+        <button class="btn btn-primary" [routerLink]="['/curso-rota', idCurso.value]"
+            routerLinkActive="router-link-active">Curso Rotas</button>
+    </div><br>
+    <div class="borda">
+        <h2>Exemplo Rotas Imperativas</h2>
+        <div class="list-group">
+            <a *ngFor="let curso of cursos" [routerLink]="['/curso-rota', curso.id]"
+                routerLinkActive="router-link-active" class="list-group-item list-group-item-action">
+                {{curso.nome}}
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="borda">
+        <h2>Rotas: Definindo e extraindo parâmetros de url (query)</h2>
+        Pagina: {{pagina}}
+        <label>Entre com o id do curso:</label>
+        <input class="form-control" #idCurso (keyup)="0"><br>
+        <button class="btn btn-primary" [routerLink]="['/curso-rota']" [queryParams]="{pagina:1}"
+            routerLinkActive="router-link-active">Curso Rotas</button>
+    </div>
+</div>

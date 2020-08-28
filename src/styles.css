@@ -2,8 +2,11 @@
 
 
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+.borda{
+    border: 1px solid;
+    padding: 30px;
+}
 
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

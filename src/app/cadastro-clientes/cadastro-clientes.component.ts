@@ -22,7 +22,6 @@ export class CadastroClientesComponent implements OnInit {
     clientes: Clientes[];
     clientesCadastrados: number = 0;
 
-
     ngOnInit(): void {
         this.getClientes();
     }

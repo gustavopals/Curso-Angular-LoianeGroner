@@ -14,21 +14,12 @@ export class CadastroProdutoComponent implements OnInit {
     produtos: Produto[];
     produtosCadastrados: number = 0;
     numeros = [1, 2, 3, 4, 5, 6];
-    teste;
-
-
 
     constructor(private produtoService: ProdutoService) { }
 
     ngOnInit(): void {
         this.getProdutos();
-        this.countProduto();
     }
-
-    countProduto() {
-
-    }
-
 
     saveProduto(form: NgForm) {
         if (this.produto.id !== undefined) {

@@ -13,7 +13,7 @@
                     [class.active]="aba == 'home'" (click)="aba = 'home'">Home</a>
                 <!--trata a variavel aba para configurar o menu-->
             </li>
-            <li class="nav-item">
+            <li class="nav-item" routerLinkActive="router-link-active">
                 <a class="nav-link" [routerLink]="['/cursos']" routerLinkActive="router-link-active"
                     [class.active]="aba == 'cursos'" (click)="aba = 'cursos'">Cursos</a>
             </li>
@@ -26,10 +26,10 @@
                 <a class="nav-link" [routerLink]="['/calcula-custo-viagem']" routerLinkActive="router-link-active"
                     [class.active]="aba == 'viagem'" (click)="aba = 'viagem'">Custo Viagem</a>
             </li>
-            <li class="nav-item">
+            <!--li class="nav-item">
                 <a class="nav-link" [routerLink]="['/cadastro-clientes']" routerLinkActive="router-link-active"
                     [class.active]="aba == 'clientes'" (click)="aba = 'clientes'">Cadastro Clientes</a>
-            </li>
+            </li-->
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/cadastro-produto']" routerLinkActive="router-link-active"
                     [class.active]="aba == 'produto'" (click)="aba = 'produto'">Cadastro Produtos</a>
@@ -38,27 +38,25 @@
                 <a class="nav-link" [routerLink]="['/carros']" routerLinkActive="router-link-active"
                     [class.active]="aba == 'carros'" (click)="aba = 'carros'">Cadastro Carros</a>
             </li>
-            <li class="nav-item">
+            <!--li class="nav-item">
                 <a class="nav-link" [routerLink]="['/vendas']" routerLinkActive="router-link-active"
                     [class.active]="aba == 'vendas'" (click)="aba = 'vendas'">Vendas</a>
-            </li>
+            </li-->
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/exemplos-pipes']" routerLinkActive="router-link-active"
                     [class.active]="aba == 'pipes'" (click)="aba = 'pipes'">Pipes</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/curso-rotas']" routerLinkActive="router-link-active"
+                    [class.active]="aba == 'rotas'" (click)="aba = 'rotas'" [queryParams]="{pagina:1}">Curso Rotas</a>
+            </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </div>
 </nav>
 
 <div class="ex1">
     <h1 class="centro">Curso Angular - Loiane Groner</h1>
-    <h5 class="centro">Gustavo Pals - 21/08/2020</h5>
-
-
+    <h4 class="centro">Gustavo Pals - 21/08/2020</h4>
     <div [ngSwitch]="aba">
         <!-- faz o switch entre as divs-->
         <div *ngSwitchCase="'cursos'">
@@ -74,18 +72,8 @@
             <h3>Aba Home</h3>
         </div>
     </div>
-    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-        <div class="card-header">Informações</div>
-        <div class="card-body">
-            <p class="card-text"> Cursos Cadastrados: {{numCurso}}</p>
-
-        </div>
-    </div>
     <router-outlet></router-outlet>
-
     <!--sistema de rotas-->
     <!--app-data-binding></app-data-binding-->
     <!--Chama o componente data-binding-->
-
-
 </div>
