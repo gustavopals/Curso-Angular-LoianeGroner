@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { CursoRotasDetalheComponent } from './curso-rotas/curso-rotas-detalhe/curso-rotas-detalhe.component';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { VendasComponent } from './vendas/vendas.component';
@@ -26,6 +27,7 @@ const routes: Routes = [ //faz as rotas
     { path: 'curso-rotas', component: CursoRotasComponent },
     { path: 'curso-rota/:id', component: CursoRotasDetalheComponent },
     { path: 'curso-rota', component: CursoRotasDetalheComponent },
+    { path: 'login', component: LoginComponent },
 
 ]
 @NgModule({

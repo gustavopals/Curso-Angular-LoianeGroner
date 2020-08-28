@@ -1,3 +1,4 @@
+import { AuthService } from './login/auth.service';
 import { CursosService } from './cursos/cursos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -60,7 +61,8 @@ import { CursosRotasService } from './curso-rotas/cursos-rotas.service';
 
     ],
     providers: [CursosService,
-        CursosRotasService],
+        CursosRotasService,
+        AuthService],
     bootstrap: [AppComponent],
     exports: []
 })

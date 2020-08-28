@@ -5,7 +5,7 @@
         <label>Entre com o id do curso:</label>
         <input class="form-control" #idCurso (keyup)="0"><br>
         <button class="btn btn-primary" [routerLink]="['/curso-rota', idCurso.value]"
-            routerLinkActive="router-link-active">Curso Rotas</button>
+            routerLinkActive="router-link-active">Seguir rota</button>
     </div><br>
     <div class="borda">
         <h2>Exemplo Rotas Imperativas</h2>
@@ -19,10 +19,7 @@
     <br>
     <div class="borda">
         <h2>Rotas: Definindo e extraindo parâmetros de url (query)</h2>
-        Pagina: {{pagina}}
-        <label>Entre com o id do curso:</label>
-        <input class="form-control" #idCurso (keyup)="0"><br>
-        <button class="btn btn-primary" [routerLink]="['/curso-rota']" [queryParams]="{pagina:1}"
-            routerLinkActive="router-link-active">Curso Rotas</button>
+        <h3>Pagina: {{pagina}} </h3>
+        <button class="btn btn-danger" (click)='proximaPagina()'>Proxima Pagina</button>
     </div>
 </div>

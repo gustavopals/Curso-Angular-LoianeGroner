@@ -29,6 +29,7 @@ export class CursoRotasDetalheComponent implements OnInit {
                 this.curso = this.cursoService.getCurso(this.id);
 
                 if (this.curso == null) {
+                    alert('Este dado não existe')
                     this.router.navigate(['/'])
                 }
             }

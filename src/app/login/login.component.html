@@ -1,1 +1,15 @@
-<p>login works!</p>
+<div class="container">
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+
+        <span id="reauth-email" class="reauth-email"></span>
+        <input [(ngModel)]="usuario.nome" type="text" id="usuario" class="form-control" placeholder="Email" required
+            autofocus>
+        <input [(ngModel)]="usuario.senha" type="password" id="senha" class="form-control" placeholder="Senha" required>
+
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="fazerLogin()">Entrar</button>
+
+
+    </div><!-- /card-container -->
+</div><!-- /container -->
