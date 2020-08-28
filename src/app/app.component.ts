@@ -16,7 +16,7 @@ export class AppComponent {
     aba = 'home';
     numCurso = 1;
     cursos;
-    mostrarMenu: boolean = false;
+    mostrarMenu: boolean = true;
 
     ngOnInit(): void {
         this.cursos = this.cursosService.getCursos();
