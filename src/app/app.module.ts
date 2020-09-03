@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './login/auth.service';
 import { CursosService } from './cursos/cursos.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,6 +26,10 @@ import { LoginComponent } from './login/login.component';
 import { CursoRotasComponent } from './curso-rotas/curso-rotas.component';
 import { CursoRotasDetalheComponent } from './curso-rotas/curso-rotas-detalhe/curso-rotas-detalhe.component';
 import { CursosRotasService } from './curso-rotas/cursos-rotas.service';
+import { HoraAtividadeComponent } from './controle-atividades/hora-atividade/hora-atividade.component';
+import { HoraAtividadeViewComponent } from './controle-atividades/hora-atividade-view/hora-atividade-view.component';
+import { ControleTarefasComponent } from './controle-tarefas/controle-tarefas.component';
+
 
 
 
@@ -47,6 +52,10 @@ import { CursosRotasService } from './curso-rotas/cursos-rotas.service';
         LoginComponent,
         CursoRotasComponent,
         CursoRotasDetalheComponent,
+        HoraAtividadeComponent,
+        HoraAtividadeViewComponent,
+        ControleTarefasComponent,
+
 
 
 
@@ -62,7 +71,8 @@ import { CursosRotasService } from './curso-rotas/cursos-rotas.service';
     ],
     providers: [CursosService,
         CursosRotasService,
-        AuthService],
+        AuthService,
+        AuthGuard],
     bootstrap: [AppComponent],
     exports: []
 })

@@ -2,7 +2,7 @@
     <a class="navbar-brand" href="#">
         Curso Angular</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -14,8 +14,13 @@
                 <!--trata a variavel aba para configurar o menu-->
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active"
+                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"
                     [class.active]="aba == 'home'" (click)="aba = 'home'">Home</a>
+                <!--trata a variavel aba para configurar o menu-->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/hora-atividade']" routerLinkActive="router-link-active"
+                    [class.active]="aba == 'home'" (click)="aba = 'home'">Controle de Atividades</a>
                 <!--trata a variavel aba para configurar o menu-->
             </li>
             <li class="nav-item" routerLinkActive="router-link-active">
@@ -55,30 +60,16 @@
                 <a class="nav-link" [routerLink]="['/curso-rotas']" routerLinkActive="router-link-active"
                     [class.active]="aba == 'rotas'" (click)="aba = 'rotas'" [queryParams]="{pagina:1}">Curso Rotas</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/cep']" routerLinkActive="router-link-active"
+                    [class.active]="aba == 'rotas'" (click)="aba = 'rotas'">CEP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/controle-tarefas']" routerLinkActive="router-link-active"
+                    [class.active]="aba == 't'" (click)="aba = 't'">Controle de Atividades</a>
+            </li>
         </ul>
     </div>
 </nav>
 
-<div class="ex1">
-    <h1 class="centro">Curso Angular - Loiane Groner</h1>
-    <h4 class="centro">Gustavo Pals - 21/08/2020</h4>
-    <div [ngSwitch]="aba" *ngIf="mostrarMenu">
-        <!-- faz o switch entre as divs-->
-        <div *ngSwitchCase="'cursos'">
-            <h3>Aba Cursos</h3>
-        </div>
-        <div *ngSwitchCase="'data'">
-            <h3>Aba Data-Binding</h3>
-        </div>
-        <div *ngSwitchCase="'viagem'">
-            <h3>Aba Custo da Viagem</h3>
-        </div>
-        <div *ngSwitchDefault>
-            <h3>Aba Home</h3>
-        </div>
-    </div>
-    <router-outlet></router-outlet>
-    <!--sistema de rotas-->
-    <!--app-data-binding></app-data-binding-->
-    <!--Chama o componente data-binding-->
-</div>
+<router-outlet></router-outlet>
