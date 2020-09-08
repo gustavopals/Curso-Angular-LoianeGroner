@@ -26,6 +26,7 @@ export class DataBindingComponent implements OnInit {
     cursosCadastrados: string[] = ["Java", "Angular", "PHP", "Android"];
     meuFavorito: boolean = false;
     cursos: string[] = [];
+    teste: boolean;
 
     ativo: boolean = false;
     tamanhoFonte: number = 10;
