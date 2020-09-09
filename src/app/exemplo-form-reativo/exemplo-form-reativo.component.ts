@@ -45,6 +45,8 @@ export class ExemploFormReativoComponent implements OnInit {
         this.estadoMultiple = this.sigla.estadoMultiple;
         this.opcao = this.sigla.opcao;
         console.warn('Estado Registrado!', customerData)
+
+
     }
 
 }

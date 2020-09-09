@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './login/auth.service';
 import { CursosService } from './cursos/cursos.service';
@@ -16,7 +17,6 @@ import { CalculaCustoViagemComponent } from './calcula-custo-viagem/calcula-cust
 import { CadastroClientesComponent } from './cadastro-clientes/cadastro-clientes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarrosComponent } from './carros/carros.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { VendasComponent } from './vendas/vendas.component';
 import { CursosComponent } from './cursos/cursos.component';
@@ -30,6 +30,9 @@ import { HoraAtividadeComponent } from './controle-atividades/hora-atividade/hor
 import { HoraAtividadeViewComponent } from './controle-atividades/hora-atividade-view/hora-atividade-view.component';
 import { ControleTarefasComponent } from './controle-tarefas/controle-tarefas.component';
 import { ExemploFormReativoComponent } from './exemplo-form-reativo/exemplo-form-reativo.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 
@@ -67,8 +70,11 @@ import { ExemploFormReativoComponent } from './exemplo-form-reativo/exemplo-form
         FormsModule,
         AppRoutingModule, //roteamento
         HttpClientModule,
-        BrowserAnimationsModule,
         ReactiveFormsModule,
+        MatProgressBarModule,
+        MatButtonModule,
+        MatSliderModule,
+        BrowserAnimationsModule
 
 
     ],
