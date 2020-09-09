@@ -35,6 +35,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { TesteUmComponent } from './testes/teste-um/teste-um.component';
 import { TesteDoisComponent } from './testes/teste-dois/teste-dois.component';
+import { HttpCursoComponent } from './http-curso/http-curso.component';
 
 
 
@@ -64,6 +65,7 @@ import { TesteDoisComponent } from './testes/teste-dois/teste-dois.component';
         ExemploFormReativoComponent,
         TesteUmComponent,
         TesteDoisComponent,
+        HttpCursoComponent,
 
 
 
