@@ -33,6 +33,8 @@ import { ExemploFormReativoComponent } from './exemplo-form-reativo/exemplo-form
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
+import { TesteUmComponent } from './testes/teste-um/teste-um.component';
+import { TesteDoisComponent } from './testes/teste-dois/teste-dois.component';
 
 
 
@@ -60,6 +62,8 @@ import { MatSliderModule } from '@angular/material/slider';
         HoraAtividadeViewComponent,
         ControleTarefasComponent,
         ExemploFormReativoComponent,
+        TesteUmComponent,
+        TesteDoisComponent,
 
 
 

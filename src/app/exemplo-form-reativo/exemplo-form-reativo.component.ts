@@ -1,3 +1,4 @@
+import { Cidadesbr } from './../models/cidadesbr';
 import { Subscription } from 'rxjs';
 import { EstadosBR } from './../models/estados-br';
 import { ConsultaEstadosService } from './../services/consulta-estados.service';
@@ -17,10 +18,12 @@ export class ExemploFormReativoComponent implements OnInit {
     itens;
     formTeste;
     estados: EstadosBR[];
+    cidades: Cidadesbr[];
     sigla;
     estadoSelecionado;
     estadoMultiple;
     opcao;
+    qcidade;
 
     constructor(
         private http: HttpClient,
@@ -30,11 +33,15 @@ export class ExemploFormReativoComponent implements OnInit {
 
     ngOnInit(): void {
         this.consultaEstados.getEstadosBR().subscribe((estados: EstadosBR[]) => { this.estados = estados; console.log(estados) });
+        this.consultaEstados.getCidades().subscribe((cidades: Cidadesbr[]) => { this.cidades = cidades; console.log(cidades) });
         this.itens = this.consultaEstados.getEstadosBR();
+
+
         this.formTeste = new FormGroup({
             estadoSelecionado: new FormControl(),
             estadoMultiple: new FormControl(),
-            opcao: new FormControl()
+            opcao: new FormControl(),
+            cidadeSelecionado: new FormControl(),
         });
     }
 
@@ -44,9 +51,7 @@ export class ExemploFormReativoComponent implements OnInit {
         this.estadoSelecionado = this.sigla.estadoSelecionado;
         this.estadoMultiple = this.sigla.estadoMultiple;
         this.opcao = this.sigla.opcao;
+        this.qcidade = this.cidades.length;
         console.warn('Estado Registrado!', customerData)
-
-
     }
-
 }
