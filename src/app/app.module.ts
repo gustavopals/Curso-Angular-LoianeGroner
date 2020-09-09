@@ -3,7 +3,7 @@ import { AuthService } from './login/auth.service';
 import { CursosService } from './cursos/cursos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
@@ -29,6 +29,7 @@ import { CursosRotasService } from './curso-rotas/cursos-rotas.service';
 import { HoraAtividadeComponent } from './controle-atividades/hora-atividade/hora-atividade.component';
 import { HoraAtividadeViewComponent } from './controle-atividades/hora-atividade-view/hora-atividade-view.component';
 import { ControleTarefasComponent } from './controle-tarefas/controle-tarefas.component';
+import { ExemploFormReativoComponent } from './exemplo-form-reativo/exemplo-form-reativo.component';
 
 
 
@@ -55,6 +56,7 @@ import { ControleTarefasComponent } from './controle-tarefas/controle-tarefas.co
         HoraAtividadeComponent,
         HoraAtividadeViewComponent,
         ControleTarefasComponent,
+        ExemploFormReativoComponent,
 
 
 
@@ -66,6 +68,7 @@ import { ControleTarefasComponent } from './controle-tarefas/controle-tarefas.co
         AppRoutingModule, //roteamento
         HttpClientModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
 
 
     ],

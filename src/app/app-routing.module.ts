@@ -1,3 +1,4 @@
+import { ExemploFormReativoComponent } from './exemplo-form-reativo/exemplo-form-reativo.component';
 import { ControleTarefasComponent } from './controle-tarefas/controle-tarefas.component';
 import { HoraAtividadeComponent } from './controle-atividades/hora-atividade/hora-atividade.component';
 import { HomeComponent } from './home/home.component';
@@ -35,6 +36,7 @@ const routes: Routes = [ //faz as rotas
     { path: 'controle-tarefas', component: ControleTarefasComponent },
     { path: 'login', component: LoginComponent },
     { path: 'home', component: HomeComponent },
+    { path: 'exemplo-form-reativo', component: ExemploFormReativoComponent },
 
 ]
 @NgModule({
