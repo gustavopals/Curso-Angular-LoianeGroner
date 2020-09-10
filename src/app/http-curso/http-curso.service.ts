@@ -16,8 +16,23 @@ export class HttpCursoService {
     list() {
         return this.http.get<Produto[]>(this.API)
             .pipe(
-                delay(5000),
+                delay(1000),
                 tap(console.log)
             );
+    }
+
+    create(curso) {
+        return this.http.post(this.API, curso) //Utiliza do metodo Post, pega a Url da Api + o objeto passado pelo componente 'curso'
+    }
+
+    delete(id) {
+        console.log('chegou no service', id);
+
+        return this.http.delete(this.API + '/' + id);
+    }
+
+    loadId(id) {
+        return this.http.get(this.API + '/' + id);
+
     }
 }

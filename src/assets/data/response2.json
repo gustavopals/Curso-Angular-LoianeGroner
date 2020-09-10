@@ -1,10 +1,6 @@
 {
   "Produto": [
     {
-      "id": 1,
-      "ProdutoNome": "Livro"
-    },
-    {
       "id": 2,
       "ProdutoNome": "Apontador"
     },
@@ -45,9 +41,6 @@
     },
     {
       "id": 12
-    },
-    {
-      "id": 13
     }
   ],
   "Venda": [

@@ -1,0 +1,33 @@
+<div class="container">
+
+    <form novalidade [formGroup]="form" class="needs-validation">
+        <div class="form-row">
+            <div class="col-md-6 md-6">
+                <div class="form-group">
+                    <label for="ProdutoNome">Nome do Produto</label>
+                    <input type="text" class="form-control" name="ProdutoNome" id="ProdutoNome"
+                        aria-describedby="helpId" placeholder="Digite o nome do produto" formControlName="ProdutoNome"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('ProdutoNome')}">
+                    <div class="invalid-feedback"
+                        *ngIf="hasError('ProdutoNome') && hasError('ProdutoNome')['required']">
+                        Nome do produto é obrigatório
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="hasError('ProdutoNome') && hasError('ProdutoNome')['minlength']">
+                        Nome precisa ter mais de 3 caracteres
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="hasError('ProdutoNome') && hasError('ProdutoNome')['maxlength']">
+                        Nome precisa ter menos de 222 caracteres
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()">Salvar</button>{{' '}}
+            <button type="submit" class="btn btn-warning" (click)="onCancel()">Cancelar</button>
+        </div>
+    </form>
+
+</div>

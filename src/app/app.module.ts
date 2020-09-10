@@ -36,6 +36,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { TesteUmComponent } from './testes/teste-um/teste-um.component';
 import { TesteDoisComponent } from './testes/teste-dois/teste-dois.component';
 import { HttpCursoComponent } from './http-curso/http-curso.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { CursosFormComponent } from './http-curso/cursos-form/cursos-form.component';
 
 
 
@@ -66,6 +68,7 @@ import { HttpCursoComponent } from './http-curso/http-curso.component';
         TesteUmComponent,
         TesteDoisComponent,
         HttpCursoComponent,
+        CursosFormComponent,
 
 
 
@@ -80,7 +83,7 @@ import { HttpCursoComponent } from './http-curso/http-curso.component';
         MatProgressBarModule,
         MatButtonModule,
         MatSliderModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
 
 
     ],

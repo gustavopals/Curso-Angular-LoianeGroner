@@ -1,3 +1,4 @@
+import { CursosFormComponent } from './http-curso/cursos-form/cursos-form.component';
 import { HttpCursoComponent } from './http-curso/http-curso.component';
 import { ExemploFormReativoComponent } from './exemplo-form-reativo/exemplo-form-reativo.component';
 import { ControleTarefasComponent } from './controle-tarefas/controle-tarefas.component';
@@ -39,6 +40,8 @@ const routes: Routes = [ //faz as rotas
     { path: 'home', component: HomeComponent },
     { path: 'exemplo-form-reativo', component: ExemploFormReativoComponent },
     { path: 'http-curso', component: HttpCursoComponent },
+    { path: 'http-curso/novo', component: CursosFormComponent },
+    { path: 'http-curso/editar/:id', component: CursosFormComponent },
 
 ]
 @NgModule({

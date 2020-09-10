@@ -2,8 +2,8 @@
     <div class="card">
         <div class="card-header">
             <h3>Cursos</h3>
-            <button class="btn btn-primary" type="button">Novo</button>
-            <button class="btn btn-primary" type="button" (click)="onRefresh()">Atualizar</button>
+            <button class="btn btn-primary" type="button" [routerLink]="['/http-curso/novo']">Novo</button>{{' '}}
+            <button class="btn btn-secondary" type="button" (click)="onRefresh()">Atualizar</button>
         </div>
         <div class="card-body">
             <!--ngif testa se produtos$ possui valor, se não exibi o ngcontent loadingError-->
@@ -21,9 +21,11 @@
                         <td>{{produto.ProdutoNome}}</td>
                         <td>
                             <span>
-                                <button type="submit" class="btn btn-outline-warning mb-1 btn-sm">Atualizar</button>
+                                <button type="submit" class="btn btn-outline-warning mb-1 btn-sm"
+                                    (click)="onEdit(produto.id)">Atualizar</button>
                                 {{' '}}
-                                <button type="submit" class="btn btn-outline-danger mb-1 btn-sm">Remover</button>
+                                <button type="submit" class="btn btn-outline-danger mb-1 btn-sm"
+                                    (click)="onDelete(produto.id)">Remover</button>
                             </span>
                         </td>
                     </tr>
@@ -31,13 +33,26 @@
             </table>
             <!--Teste se error é positivo, se não vai para a tela de loading-->
             <ng-template #loadingError>
-                <div *ngIf="error$|async; else loading"></div>
-                <p>Erro ao carregar dados</p>
+                <div *ngIf="error$|async; else loading">
+
+                    <div class="alert alert-danger" role="alert">
+                        Erro ao carregar os dados, volte mais tarde...
+
+                    </div>
+
+                </div>
             </ng-template>
 
             <ng-template #loading>
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
+                <div class="row">
+                    <div class="col-lg-1">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <p>Carregando dados...</p>
+                    </div>
                 </div>
             </ng-template>
         </div>
