@@ -1,1 +1,45 @@
-<p>http-curso works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Cursos</h3>
+            <button class="btn btn-primary" type="button">Novo</button>
+            <button class="btn btn-primary" type="button" (click)="onRefresh()">Atualizar</button>
+        </div>
+        <div class="card-body">
+            <!--ngif testa se produtos$ possui valor, se não exibi o ngcontent loadingError-->
+            <table class="table table-hover" *ngIf="produtos$ | async as carrega; else loadingError">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Curso</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let produto of carrega">
+                        <td>{{produto.id}}</td>
+                        <td>{{produto.ProdutoNome}}</td>
+                        <td>
+                            <span>
+                                <button type="submit" class="btn btn-outline-warning mb-1 btn-sm">Atualizar</button>
+                                {{' '}}
+                                <button type="submit" class="btn btn-outline-danger mb-1 btn-sm">Remover</button>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--Teste se error é positivo, se não vai para a tela de loading-->
+            <ng-template #loadingError>
+                <div *ngIf="error$|async; else loading"></div>
+                <p>Erro ao carregar dados</p>
+            </ng-template>
+
+            <ng-template #loading>
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
