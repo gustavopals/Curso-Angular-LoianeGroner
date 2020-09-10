@@ -16,6 +16,7 @@ export class HttpCursoComponent implements OnInit {
     produtos: Produto[];
     produtos$: Observable<Produto[]>;
     error$ = new Subject<boolean>(); //true or false para erro
+    teste;
 
     constructor(private service: HttpCursoService,
         private router: Router,
@@ -41,12 +42,23 @@ export class HttpCursoComponent implements OnInit {
     }
 
     onDelete(curso) {
-        console.log('entrou no onDelete');
-        this.service.delete(curso).subscribe(
-            success => console.log('Excluiu'),
-            erros => alert('Erro ao excluir o produto, verifique!'),
-            () => { this.onRefresh, console.log("Produto delete"), alert("Produto excluido com sucesso!") })
-        console.log('retornou do service');
+
+
+        this.teste = confirm('Tem certeza que deseja excluir este registro?');
+
+        if (this.teste == true) {
+            console.log('entrou no onDelete');
+            this.service.delete(curso).subscribe(
+                success => console.log('Excluiu'),
+                erros => alert('Erro ao excluir o produto, verifique!'),
+                () => { this.onRefresh, console.log("Produto delete"), alert("Produto excluido com sucesso!") })
+            console.log('retornou do service');
+
+        } else {
+            alert('Registro nao excluido')
+
+        }
+
     }
 
     onEdit(id) {

@@ -16,13 +16,19 @@ export class HttpCursoService {
     list() {
         return this.http.get<Produto[]>(this.API)
             .pipe(
-                delay(1000),
+                delay(100),
                 tap(console.log)
             );
     }
 
     create(curso) {
+        alert("Produto cadastrado com sucesso!");
         return this.http.post(this.API, curso) //Utiliza do metodo Post, pega a Url da Api + o objeto passado pelo componente 'curso'
+    }
+
+    update(curso) {
+        alert("Produto alterado com sucesso!");
+        return this.http.put(this.API + '/' + curso.id, curso)
     }
 
     delete(id) {
@@ -33,6 +39,13 @@ export class HttpCursoService {
 
     loadId(id) {
         return this.http.get(this.API + '/' + id);
+    }
 
+    save(curso) {
+        if (curso.id) {
+            return this.update(curso)
+        } else {
+            return this.create(curso)
+        }
     }
 }

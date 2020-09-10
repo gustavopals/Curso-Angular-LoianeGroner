@@ -34,7 +34,6 @@ export class CursosFormComponent implements OnInit {
             }
         );
 
-
         this.form = this.fb.group({ //define os nomes dos campos + validators
             id: [null],
             ProdutoNome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(222)]]
@@ -42,25 +41,40 @@ export class CursosFormComponent implements OnInit {
     }
 
     updateForm(produto) {
-
         this.form.setValue({
             id: produto.id,
             ProdutoNome: produto.ProdutoNome
         })
-
-
     }
 
     onSubmit() {
         this.submitted = true;
         console.log(this.form.value) //imprime o valor do campo
         if (this.form.valid) { //testa se o valor do campo é valido
-            console.log('Submit')
-            this.service.create(this.form.value).subscribe( //acessa a funcao create do service http-curso
-                success => this.router.navigate(['http-curso']),//caso sucesso redireciona o usuario para pagina http-curso
-                error => alert('Ocorreu um erro no servidor, verifique!'),//caso erro, mostra um alert
-                () => alert('Produto cadastrado com sucesso'), //finaliza o request com sucesso
-            );
+            console.log('Submit');
+
+            this.service.save(this.form.value).subscribe(// save simplifica o create e update
+                success => this.router.navigate(['http-curso'])
+            )
+
+
+
+            /* if (this.form.value.id) { //teste se existe já o id, se true, faz update, se false faz o create
+                    this.service.update(this.form.value).subscribe(
+                        success => this.router.navigate(['http-curso']),
+                        error => alert('Ocorreu um erro no servidor durante a atualização, verifique!'),
+                        () => alert('Produto atualizado com sucesso!'),
+                    )
+                } else {
+                    this.service.create(this.form.value).subscribe( //acessa a funcao create do service http-curso
+                        success => this.router.navigate(['http-curso']),//caso sucesso redireciona o usuario para pagina http-curso
+                        error => alert('Ocorreu um erro no servidor, verifique!'),//caso erro, mostra um alert
+                        () => alert('Produto cadastrado com sucesso!'), //finaliza o request com sucesso
+                    );
+                }
+    */
+
+
         }
     }
 
@@ -69,10 +83,7 @@ export class CursosFormComponent implements OnInit {
         console.log('onCancel');
         this.form.reset();
         this.router.navigate(['http-curso']);
-
     }
-
-
 
     hasError(field: string) {
         return this.form.get(field).errors

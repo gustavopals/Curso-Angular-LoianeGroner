@@ -1,3 +1,4 @@
+import { UploadComponent } from './http-curso/upload/upload.component';
 import { CursosFormComponent } from './http-curso/cursos-form/cursos-form.component';
 import { HttpCursoComponent } from './http-curso/http-curso.component';
 import { ExemploFormReativoComponent } from './exemplo-form-reativo/exemplo-form-reativo.component';
@@ -42,6 +43,7 @@ const routes: Routes = [ //faz as rotas
     { path: 'http-curso', component: HttpCursoComponent },
     { path: 'http-curso/novo', component: CursosFormComponent },
     { path: 'http-curso/editar/:id', component: CursosFormComponent },
+    { path: 'upload', component: UploadComponent },
 
 ]
 @NgModule({

@@ -38,6 +38,7 @@ import { TesteDoisComponent } from './testes/teste-dois/teste-dois.component';
 import { HttpCursoComponent } from './http-curso/http-curso.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CursosFormComponent } from './http-curso/cursos-form/cursos-form.component';
+import { UploadComponent } from './http-curso/upload/upload.component';
 
 
 
@@ -69,6 +70,7 @@ import { CursosFormComponent } from './http-curso/cursos-form/cursos-form.compon
         TesteDoisComponent,
         HttpCursoComponent,
         CursosFormComponent,
+        UploadComponent,
 
 
 
