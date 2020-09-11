@@ -1,8 +1,11 @@
+import { UploadFileService } from './upload-file.service';
 import { Component, OnInit } from '@angular/core';
 
 import { take } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { HttpEventType, HttpEvent } from '@angular/common/http';
+
+import { filterResponse, uploadProgress } from '../shared/rxjs-operators';
 
 
 @Component({
@@ -11,10 +14,11 @@ import { HttpEventType, HttpEvent } from '@angular/common/http';
 })
 export class UploadComponent implements OnInit {
 
+
     files: Set<File>;
     progress = 0;
 
-    constructor() { }
+    constructor(private service: UploadFileService) { }
 
     ngOnInit() { }
 
@@ -35,5 +39,42 @@ export class UploadComponent implements OnInit {
         this.progress = 0;
     }
 
+    onUpload() {
+        if (this.files && this.files.size > 0) {
+            this.service.upload(this.files, environment.BASE_URL + '/upload')
+                .pipe(
+                    uploadProgress(progress => {
+                        console.log(progress);
+                        this.progress = progress;
+                    }),
+                    filterResponse()
+                )
+                .subscribe(response => console.log('Upload Concluído'));
+            // .subscribe((event: HttpEvent<Object>) => {
+            //   // console.log(event);
+            //   if (event.type === HttpEventType.Response) {
+            //     console.log('Upload Concluído');
+            //   } else if (event.type === HttpEventType.UploadProgress) {
+            //     const percentDone = Math.round((event.loaded * 100) / event.total);
+            //     // console.log('Progresso', percentDone);
+            //     this.progress = percentDone;
+            //   }
+            // } );
+        }
+    }
+
+    onDownloadExcel() {
+        this.service.download(environment.BASE_URL + '/downloadExcel')
+            .subscribe((res: any) => {
+                this.service.handleFile(res, 'report.xlsx');
+            });
+    }
+
+    onDownloadPDF() {
+        this.service.download(environment.BASE_URL + '/downloadPDF')
+            .subscribe((res: any) => {
+                this.service.handleFile(res, 'report.pdf');
+            });
+    }
 
 }
